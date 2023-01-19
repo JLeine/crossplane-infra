@@ -6,7 +6,7 @@ spec:
   name: crossplane
   pools:
     - id: "8482f422-dcdd-461g-afb4-2ab67f171c3e"
-      count: 4
+      count: 3
       size: g4s.kube.xsmall
   applications:
     - "argo-cd"
