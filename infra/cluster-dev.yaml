@@ -1,0 +1,31 @@
+kind: CivoKubernetes
+apiVersion: cluster.civo.crossplane.io/v1alpha1
+metadata: 
+  name: devcluster
+spec:
+  name: devcluster
+  pools:
+    - id: "46887777-424c-410c-8ddb-b9e1b477c44d"
+      count: 4
+      size: g3.k3s.small
+  applications: 
+    - "argo-cd"
+    - "argo-workflows"
+    - "Bitwardenrs:1GB"
+    - "istio:Istio Latest"
+    - "kafka"
+    - "kubernetes-dashboard"
+    - "kyverno"
+    - "loki-stack"
+    - "MongoDB:5GB"
+    - "MinIO:5GB"
+    - "Portainer:Community edition"
+    - "sealed-secrets"
+    - "Tekton"
+    - "prometheus-operator"
+  version: "1.23.6-k3s1"
+  connectionDetails:
+    connectionSecretNamePrefix: "cluster-details"
+    connectionSecretNamespace: "default"
+  providerConfigRef:
+    name: civo-provider

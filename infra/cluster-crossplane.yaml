@@ -1,0 +1,21 @@
+kind: CivoKubernetes
+apiVersion: cluster.civo.crossplane.io/v1alpha1
+metadata: 
+  name: crossplane
+spec:
+  name: crossplane
+  pools:
+    - id: "8482f422-dcdd-461g-afb4-2ab67f171c3e"
+      count: 1
+      size: g4s.kube.xsmall
+  applications:
+    - "argo-cd"
+    - "argo-workflows"
+    - "kubernetes-dashboard"
+    - "sealed-secrets"
+  version: "1.23.6-k3s1"
+  connectionDetails:
+    connectionSecretNamePrefix: "cluster-details"
+    connectionSecretNamespace: "default"
+  providerConfigRef:
+    name: civo-provider
