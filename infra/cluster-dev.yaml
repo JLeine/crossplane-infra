@@ -7,7 +7,7 @@ spec:
   pools:
     - id: "46887777-424c-410c-8ddb-b9e1b477c44d"
       count: 3
-      size: g3.k3s.small
+      size: g4s.kube.medium
   applications: 
     - "argo-cd"
     - "argo-workflows"
@@ -23,6 +23,7 @@ spec:
     - "sealed-secrets"
     - "Tekton"
     - "prometheus-operator"
+    - "Nginx"
   version: "1.23.6-k3s1"
   connectionDetails:
     connectionSecretNamePrefix: "cluster-details"

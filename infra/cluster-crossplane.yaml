@@ -13,6 +13,7 @@ spec:
     - "argo-workflows"
     - "kubernetes-dashboard"
     - "sealed-secrets"
+    - "Nginx"
   version: "1.23.6-k3s1"
   connectionDetails:
     connectionSecretNamePrefix: "cluster-details"
